@@ -21,11 +21,17 @@ use Filament\Forms\Components\Toggle;
 
 
 
+
+
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
+    protected static ?int $navigationSort = 1;
+
+
 
     public static function form(Form $form): Form
     {
@@ -52,6 +58,15 @@ class PostResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->columnSpanFull(),
+                Forms\Components\Select::make('categories')
+                    ->multiple()
+                    ->relationship(titleAttribute: 'name')
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('name')
+                            ->required(),
+                        Forms\Components\TextArea::make('description')
+                            ->required(),
+                        ]),
                 MarkdownEditor::make('body')
                     ->required()
                     ->columnSpanFull(),
