@@ -46,9 +46,11 @@
 
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
-          <div class="flex h-16 shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-          </div>
+      <div class="my-12 flex flex-col justify-center items-center">
+          <img src="/gary.jpg" alt="" class="h-32 w-32 rounded-full object-cover mb-4">
+          <h1 class="text-xl font-bold text-center w-full">Gary's Bible Blog</h1>
+          <p class="text-center text-sm">Thoughts on scripture and the Christian life.</p>
+      </div>
           <nav class="flex flex-1 flex-col">
             <ul role="list" class="flex flex-1 flex-col gap-y-7">
               <li>
@@ -91,10 +93,10 @@
   <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
     <!-- Sidebar component, swap this element with another sidebar if you like -->
     <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
-      <div>
-          <img src="" alt="" class="aspect-video w-full object-cover">
-          <h1 class="text-xl font-bold">Gary's Bible Blog</h1>
-          <p>Thoughts on scripture and the Christian life.</p>
+      <div class="my-12 flex flex-col justify-center items-center">
+          <img src="/gary.jpg" alt="" class="h-32 w-32 rounded-full object-cover mb-4">
+          <h1 class="text-xl font-bold text-center w-full">Gary's Bible Blog</h1>
+          <p class="text-center text-sm">Thoughts on scripture and the Christian life.</p>
       </div>
       <nav class="flex flex-1 flex-col">
         <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -140,6 +142,6 @@
       </svg>
     </button>
     <div class="flex-1 text-sm font-semibold leading-6 text-gray-900">{{$title}}</div>
-    
+
   </div>
 </div>

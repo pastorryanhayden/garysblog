@@ -1,3 +1,5 @@
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
-</div>
+@foreach($posts as $post)
+    <livewire:blog.item item="{{$post->id}}" />
+@endforeach
+<div>
