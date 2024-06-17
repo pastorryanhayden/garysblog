@@ -3,8 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Home;
+use App\Livewire\Blog\Single;
+
 
 Route::get('/', Home::class);
+Route::get('/blog/{slug}', Single::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

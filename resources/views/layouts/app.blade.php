@@ -18,8 +18,8 @@
         <div class="min-h-screen bg-gray-100">
 <div x-data="{open: false}">
   <livewire:navigation />
-  <main class="py-10 lg:pl-72">
-    <div class="px-4 sm:px-6 lg:px-8">
+  <main class="lg:pl-72">
+    <div class="lg:px-12">
       {{$slot}}
     </div>
   </main>

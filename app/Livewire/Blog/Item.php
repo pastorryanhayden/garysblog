@@ -13,7 +13,8 @@ class Item extends Component
     public function mount($item)
     {
         $this->item = Post::where('id', $item)->first();
-        $this->item->markdown = Str::of($this->item->body)->markdown();
+        $this->item->markdown = Str::words($this->item->body, 40, '...');
+        $this->item->markdown = Str::of($this->item->markdown)->markdown();
     }
 
     public function render()
