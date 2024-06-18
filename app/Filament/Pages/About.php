@@ -8,6 +8,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextArea;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\FileUpload;
 use Filament\Actions\Action;
 use Filament\Support\Exceptions\Halt;
@@ -15,13 +16,13 @@ use Filament\Notifications\Notification;
 
 use App\Models\Settings as SettingsModel;
 
-class Settings extends Page implements HasForms
+class About extends Page implements HasForms
 {
     use InteractsWithForms;
 
     public ?array $data = [];
 
-    protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
+    protected static ?string $navigationIcon = 'heroicon-o-user-circle';
 
     protected static string $view = 'filament.pages.settings';
 
@@ -48,15 +49,18 @@ class Settings extends Page implements HasForms
     {
         return $form
             ->schema([
-                TextInput::make('title')
+                TextInput::make('about_title')
                     ->label('Title')
                     ->required(),
-                TextArea::make('description')
-                    ->label('Description')
-                    ->required(),
-                FileUpload::make('photo')
+                TextArea::make('about_description')
                     ->required()
-                    ->image()
+                    ->label('Description'),
+                FileUpload::make('about_image')
+                    ->label('Image')
+                    ->required()
+                    ->image(),
+                MarkdownEditor::make('about_content')
+                    ->label('Content')
             ])
             ->statePath('data');
     }
@@ -79,7 +83,6 @@ class Settings extends Page implements HasForms
         } catch (Halt $exception) {
             return;
         }
-
         Notification::make()
             ->success()
             ->title(__('filament-panels::resources/pages/edit-record.notifications.saved.title'))
