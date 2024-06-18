@@ -12,10 +12,10 @@ class Navigation extends Component
     public $active;
     public $settings;
 
-    public function mount($title, $active)
+    public function mount($title)
     {
         $this->title = $title;
-        $this->active = $active;
+        $this->active = url()->current();
         $this->settings = Settings::first();
     }
 

@@ -26,6 +26,8 @@ class About extends Page implements HasForms
 
     protected static string $view = 'filament.pages.settings';
 
+    protected static ?string $title = 'About Page';
+
     protected static ?int $navigationSort = 3;
 
     public function mount(): void
