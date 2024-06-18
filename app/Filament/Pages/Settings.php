@@ -7,7 +7,6 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\FileUpload;
 use Filament\Actions\Action;
 use Filament\Support\Exceptions\Halt;
@@ -51,7 +50,7 @@ class Settings extends Page implements HasForms
                 TextInput::make('title')
                     ->label('Title')
                     ->required(),
-                TextArea::make('description')
+                TextInput::make('description')
                     ->label('Description')
                     ->required(),
                 FileUpload::make('photo')

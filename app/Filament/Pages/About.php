@@ -7,7 +7,6 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\FileUpload;
 use Filament\Actions\Action;
@@ -54,7 +53,7 @@ class About extends Page implements HasForms
                 TextInput::make('about_title')
                     ->label('Title')
                     ->required(),
-                TextArea::make('about_description')
+                TextInput::make('about_description')
                     ->required()
                     ->label('Description'),
                 FileUpload::make('about_image')

@@ -52,7 +52,7 @@ class PostResource extends Resource
                     ->disabled()
                     ->dehydrated(),
                 Toggle::make('published'),
-                Forms\Components\TextArea::make('description')
+                Forms\Components\TextInput::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
@@ -64,7 +64,7 @@ class PostResource extends Resource
                     ->createOptionForm([
                         Forms\Components\TextInput::make('name')
                             ->required(),
-                        Forms\Components\TextArea::make('description')
+                        Forms\Components\TextInput::make('description')
                             ->required(),
                         ]),
                 MarkdownEditor::make('body')
